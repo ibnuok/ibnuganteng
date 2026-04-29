@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Love</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section id="home" class="page active">
+        <div class="floating-hearts" aria-hidden="true"></div>
+        <h1 class="title">haiii lovee</h1>
+        <button class="btn primary" data-target="menu">Next</button>
+      </section>
+
+      <section id="menu" class="page">
+        <h2 class="subtitle">Pilih yaa sayang 💗</h2>
+        <div class="menu-buttons">
+          <button class="choice" data-target="letter" aria-label="Buka Surat">
+            <span class="icon">💌</span>
+            <span>Surat</span>
+          </button>
+          <button class="choice" data-target="gallery" aria-label="Buka Foto Love">
+            <span class="icon">💖</span>
+            <span>Love</span>
+          </button>
+        </div>
+        <button class="btn end" data-target="ending">End</button>
+      </section>
+
+      <section id="letter" class="page">
+        <h2 class="subtitle">Untuk kamu 🤍</h2>
+        <p class="letter-text">
+          halloo sayanggg, akuu cumaa mauu ucapinn buatt kamuu yang hebat bgtt udaa
+          ngelewatin lika liku UTBK sampaii sejauh inii, semogaa lelahh yang diusahain
+          kamuu inii berbuah maniss sepertii kamuu, ingett gagal bukan akhirr dari
+          segalanya, apapun hasilnya nanti kamuu harus bangga sama diri kamu sejauh ini,
+          jangan pernah lupa untuk bersyukur, karena hidup bukan sekedar soal menang dan
+          kalah tapii tentang siapa siapa yang selalu berdiri dan berani mencoba meski
+          jalan yang dilaluinya tidak selalu mudah. semogaa hasill yang kamu dapatkan
+          sesuaii impian kamuu yaa bbeyy, ingett akuu selaluu ada untukmu, aku juga akan
+          selalu support kamuu
+        </p>
+        <button class="btn" data-target="menu">Back</button>
+      </section>
+
+      <section id="gallery" class="page">
+        <h2 class="subtitle">Foto-foto kamu di hati aku 🫶</h2>
+        <div class="heart-gallery" aria-label="Galeri foto bentuk love">
+          <img src="assets/foto1.jpg" alt="Foto kenangan 1" />
+          <img src="assets/foto2.jpg" alt="Foto kenangan 2" />
+          <img src="assets/foto3.jpg" alt="Foto kenangan 3" />
+          <img src="assets/foto4.jpg" alt="Foto kenangan 4" />
+        </div>
+        <button class="btn" data-target="menu">Kembali</button>
+      </section>
+
+      <section id="ending" class="page">
+        <div class="rain" aria-hidden="true"></div>
+        <h2 class="ending-text">i love u more</h2>
+        <button class="btn" data-target="menu">Balik lagi</button>
+      </section>
+    </main>
+
+    <script src="scrip.js"></script>
+  </body>
+</html>
