@@ -1,0 +1,146 @@
+:root {
+  --pink-bg: #ffe3ee;
+  --pink-card: #ffd0e2;
+  --pink-strong: #ff4d8d;
+  --text: #5f2b46;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  background: var(--pink-bg);
+  color: var(--text);
+  min-height: 100dvh;
+}
+
+.app {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100dvh;
+  padding: 32px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+.page.active { display: flex; }
+
+.title {
+  font-size: clamp(2rem, 7vw, 2.7rem);
+  animation: pop 1s ease both;
+}
+.subtitle { font-size: 1.5rem; margin: 0; }
+
+.btn, .choice {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn {
+  background: white;
+  color: var(--pink-strong);
+  box-shadow: 0 8px 20px #ff8fbc55;
+}
+.btn.primary {
+  background: linear-gradient(90deg, #ff7cab, #ff4d8d);
+  color: white;
+  font-size: 1.1rem;
+}
+.end { background: #ff4d8d; color: #fff; }
+
+.menu-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+.choice {
+  background: var(--pink-card);
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  padding: 18px 8px;
+}
+.choice .icon { font-size: 2rem; }
+
+.letter-text {
+  text-align: left;
+  background: #fff8fc;
+  border-radius: 18px;
+  padding: 16px;
+  line-height: 1.5;
+  max-height: 58dvh;
+  overflow: auto;
+}
+
+.heart-gallery {
+  width: min(92vw, 360px);
+  aspect-ratio: 1 / 1;
+  clip-path: path("M 180 320 C 50 230 20 120 90 70 C 130 40 170 55 180 95 C 190 55 230 40 270 70 C 340 120 310 230 180 320 Z");
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  overflow: hidden;
+  background: #fff;
+  border: 8px solid #fff;
+  box-shadow: 0 12px 24px #ff8fbf66;
+}
+.heart-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-hearts::before,
+.floating-hearts::after {
+  content: "💗 💖 💕 💘 💝 💞";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.3rem;
+  letter-spacing: 10px;
+  animation: float 5s linear infinite;
+}
+.floating-hearts::after {
+  animation-delay: -2.5s;
+  top: 60%;
+}
+
+.rain span {
+  position: absolute;
+  top: -10%;
+  font-size: 1.25rem;
+  animation: fall linear forwards;
+}
+.ending-text {
+  font-size: clamp(2rem, 9vw, 3rem);
+  color: #ff2f7d;
+  animation: slideIn 1.2s ease both;
+}
+
+@keyframes pop { from { transform: scale(.75); opacity: 0; } }
+@keyframes float {
+  from { top: 100%; opacity: 0; }
+  20% { opacity: 1; }
+  to { top: -10%; opacity: 0; }
+}
+@keyframes fall {
+  from { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  to { transform: translateY(120vh) rotate(360deg); opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(35px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
